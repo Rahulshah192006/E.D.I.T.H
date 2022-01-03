@@ -1,0 +1,27 @@
+def Summary(Boby):
+
+    list__ = ('2','3','4','5')
+
+    value = random.choice(list__)
+
+    path = "E:\\Y O U T U B E\\J A R V I S  S E R I E S\\H O W  T O  M A K E  J A R V I S\\DataBase\\NasaDataBase\\Images Used\\" + str(value) + ".jpg"
+
+    os.startfile(path)
+
+    name = str(Boby)
+
+    url = "https://hubblesite.org/api/v3/glossary/" + str(name)
+
+    r = requests.get(url)
+
+    Data = r.json()
+
+    if len(Data) != 0:
+
+        retur =  Data['definition']
+
+        Speak(f"According To The Nasa : {retur}")
+
+    else:
+
+        Speak("No Data Available , Try Again Later!")

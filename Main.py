@@ -1,6 +1,7 @@
 import sys
 from Auto import Whatsapp,whatsappCall,whatsappVCall
 from time import sleep
+from NASA import Nasa , MarsImage
 import pyttsx3
 import speech_recognition as sr
 from DataBase.ExtraPro.start import GoogleImage
@@ -150,6 +151,11 @@ def TaskExe():
             Date = Takecommand()
             NewDate = DateConverter(Date)
             Nasa(NewDate)
+        elif 'mars planet news' in query:
+            speak("Boss extracting information from Nasa")
+            speak("Extracting from curiosity rover")
+            MarsImage()
+
         else:
             speak("Sorry Sir Can't understand")
 
