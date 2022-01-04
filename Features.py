@@ -12,6 +12,9 @@ from time import sleep
 import speedtest
 import wolframalpha
 import requests
+import pyautogui as pa
+
+searchbar = pa.locateCenterOnScreen('D:\\ULTRON\\EDITH\\DataBase\\PyAutoGui\\Youtube\\SearchBar.png')
 def speak(audio):
     engine = pyttsx3.init('sapi5')
     voices = engine.getProperty('voices')
@@ -147,3 +150,15 @@ def DateConverter(Query):
     Date = Date.replace(" ","")
 
     return str(Date)
+
+def YoutubeAudio():
+    sleep(2)
+    pa.moveTo(searchbar)
+    pa.click()
+    hotkey('ctrl','c')
+    value = pyperclip.paste()
+    Link = str(value)
+    youtube_link = Link
+    y = YouTube(youtube_link)
+    t = y.streams.filter(only_audio=True).all()
+    t[0].download(output_path="D:\\ULTRON\\EDITH\\DataBase\\YoutubeAudio")

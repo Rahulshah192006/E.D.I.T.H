@@ -73,5 +73,4 @@ def MarsImage():
 
     except:
         speak("Something Went wrong")
-MarsImage()
 

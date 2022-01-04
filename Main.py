@@ -5,7 +5,8 @@ from NASA import Nasa , MarsImage
 import pyttsx3
 import speech_recognition as sr
 from DataBase.ExtraPro.start import GoogleImage
-from Features import Calculator, InternetSpeed, Temp, YoutubeSearch,GoogleSearch,DownloadYouTube,Alarm,DateConverter
+from Features import Calculator, InternetSpeed, Temp, YoutubeAudio, YoutubeSearch,GoogleSearch,DownloadYouTube,Alarm
+from Features import DateConverter
 import os
 from keyboard import press
 from keyboard import press_and_release
@@ -155,7 +156,8 @@ def TaskExe():
             speak("Boss extracting information from Nasa")
             speak("Extracting from curiosity rover")
             MarsImage()
-
+        elif 'download audio' in query:
+            YoutubeAudio()
         else:
             speak("Sorry Sir Can't understand")
 
