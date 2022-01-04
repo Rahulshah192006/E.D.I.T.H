@@ -1,8 +1,13 @@
+from matplotlib import *
 import requests
 import os
 from PIL import Image
 import pyttsx3
 import random
+from datetime import date
+import math
+from cartopy.crs import PlateCarree
+import matplotlib.pyplot as plt
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -74,3 +79,29 @@ def MarsImage():
     except:
         speak("Something Went wrong")
 
+def ISSTracker():
+    url = "http://api.open-notify.org/iss-now.json"
+
+    r = requests.get(url)
+
+    Data = r.json()
+
+    dt = Data['timestamp']
+
+    lat = Data['iss_position']['latitude']
+
+    lon = Data['iss_position']['longitude']
+
+    print(f"Time And Date : {dt}")
+    print(f"Latitude : {lat}")
+    print(f"Longitude : {lon}")
+
+    plt.figure(figsize=(10,8))
+
+    ax = plt.axes(projection =PlateCarree())
+
+    ax.stock_img()
+
+    plt.scatter(float(lon),float(lat),color = 'blue' , marker= 'o')
+
+    plt.show()

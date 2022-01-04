@@ -1,7 +1,7 @@
 import sys
 from Auto import Whatsapp,whatsappCall,whatsappVCall
 from time import sleep
-from NASA import Nasa , MarsImage
+from NASA import ISSTracker, Nasa , MarsImage
 import pyttsx3
 import speech_recognition as sr
 from DataBase.ExtraPro.start import GoogleImage
@@ -158,6 +158,8 @@ def TaskExe():
             MarsImage()
         elif 'download audio' in query:
             YoutubeAudio()
+        elif 'track iss' in query:
+            ISSTracker()
         else:
             speak("Sorry Sir Can't understand")
 
