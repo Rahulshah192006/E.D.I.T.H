@@ -1,7 +1,7 @@
 import sys
 from Auto import Whatsapp,whatsappCall,whatsappVCall
 from time import sleep
-from NASA import ISSTracker, Nasa , MarsImage
+from NASA import ISSTracker, Nasa , MarsImage,AstroidEarth
 import pyttsx3
 import speech_recognition as sr
 from DataBase.ExtraPro.start import GoogleImage
@@ -13,6 +13,9 @@ from keyboard import press_and_release
 import webbrowser
 
 from NASA import Nasa
+from DataBase.Class.onlineclass import teams,vednatuClass
+
+
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[len(voices)-2].id)
@@ -160,7 +163,28 @@ def TaskExe():
             YoutubeAudio()
         elif 'track iss' in query:
             ISSTracker()
+        elif 'astroid near me' in query:
+            speak("ok boss")
+            speak("give me start date and end date for information")
+            sDate = input("Enter Start Date : ")
+            eDate = input("Enter End Date : ")
+            speak("Ok boss")
+            AstroidEarth(sDate,eDate)
+        elif 'join my class' in query:
+            teams()
+        elif 'check vedantu class' or 'vedantu' in query:
+            speak("ok Boss")
+            vednatuClass()
+
         else:
             speak("Sorry Sir Can't understand")
 
-TaskExe()
+
+
+if __name__ == "__main__":
+    while True:
+        permission = Takecommand()
+        if "wake up" in permission:
+            TaskExe()
+        elif 'goodbye' in permission:
+            sys.exit()

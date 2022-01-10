@@ -105,3 +105,16 @@ def ISSTracker():
     plt.scatter(float(lon),float(lat),color = 'blue' , marker= 'o')
 
     plt.show()
+
+def AstroidEarth(start_date,end_data):
+    url = f"https://api.nasa.gov/neo/rest/v1/feed?start_date={start_date}&end_date={end_data}&api_key={api_key}"
+    r = requests.get(url)
+    data = r.json()
+    elemen = data['element_count']
+    speak('Boss As per Nasa Data : ')
+    speak(f'Total objects near earth from {start_date} to {end_data} are {elemen}')
+def infobodies():
+    url = "https://api.le-system-solaire.net/rest/bodies"
+    r = requests.get(url)
+    Data = r.json()
+    print(Data)
