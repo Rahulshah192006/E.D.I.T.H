@@ -1,3 +1,4 @@
+import imp
 import sys
 from Auto import Whatsapp,whatsappCall,whatsappVCall
 from time import sleep
@@ -11,9 +12,10 @@ import os
 from keyboard import press
 from keyboard import press_and_release
 import webbrowser
-
 from NASA import Nasa
 from DataBase.Class.onlineclass import teams,vednatuClass
+from lighton import lighton
+from lightoff import lightoff
 
 
 engine = pyttsx3.init('sapi5')
@@ -130,7 +132,7 @@ def TaskExe():
             press_and_release(bb)
         elif 'open' in query:
 
-            name = query.replace("open ","")
+            name = query.replace("open","")
 
             NameA = str(name)
 
@@ -170,21 +172,16 @@ def TaskExe():
             eDate = input("Enter End Date : ")
             speak("Ok boss")
             AstroidEarth(sDate,eDate)
-        elif 'join my class' in query:
-            teams()
-        elif 'check vedantu class' or 'vedantu' in query:
-            speak("ok Boss")
-            vednatuClass()
+        elif 'light on' in query:
+            speak("Turning Light on")
+            lighton()
+        elif 'light off' in query:
+            speak("Turning Light off")
+            lightoff()
+
 
         else:
             speak("Sorry Sir Can't understand")
 
 
-
-if __name__ == "__main__":
-    while True:
-        permission = Takecommand()
-        if "wake up" in permission:
-            TaskExe()
-        elif 'goodbye' in permission:
-            sys.exit()
+TaskExe()

@@ -23,8 +23,8 @@ def speak(audio):
     engine.runAndWait()
 
 def teams():
-    emailid="email"
-    password="pass"
+    emailid="rahul.shah@advancedacademymiddle.onmicrosoft.com"
+    password="warmachine36@stark"
     day1=["Hindi","Chemistry","Physics","Mathematics","Group 2 Activity ( Performing art)"]
     day2=["Hindi","Mathematics","sports","Social science","English"]
     day3=["English","Computer","Social science","Biology","Mathematics"]
@@ -245,8 +245,8 @@ def teams():
 
 
 
-number = 'enter your mob number'
-passw = 'password'
+number = '9826622532'
+passw = 'rahul123'
 op= "D:\\ULTRON\\Teams Bot\\chromedriver.exe"
 driver = webdriver.Chrome(executable_path=op) 
 
@@ -269,14 +269,11 @@ def vednatuClass():
     next = driver.find_element_by_xpath('//*[@id="login-submit2"]')
     next.click()
     speak("Boss checking for class")
-    time.sleep(15)
-    try:
-        speak("Class found Boss i am joining boss")
-        joinbutton = driver.find_element_by_xpath('//*[@id="latest-upc-session-banner"]/table/tr/td[3]/a')
-        joinbutton.click()
-        time.sleep(35)
-        joinsession = driver.find_element_by_xpath('//*[@id="checkAudioAndVideo"]/div[3]')
-        joinsession.click()
-        print("Boss i have joined the class")
-    except:
-        print("Boss there is no class")
+    time.sleep(15)  
+    speak("Class found Boss i am joining boss")
+    joinbutton = driver.find_element_by_xpath('//*[@id="latest-upc-session-banner"]/table/tr/td[3]/a')
+    joinbutton.click()
+    time.sleep(35)
+    joinsession = driver.find_element_by_xpath('//*[@id="checkAudioAndVideo"]/div[3]')
+    joinsession.click()
+    print("Boss i have joined the class")
