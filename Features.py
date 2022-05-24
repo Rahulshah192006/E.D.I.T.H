@@ -1,7 +1,7 @@
 import pyperclip
 import pywhatkit
 import wikipedia
-from pywikihow import WikiHow,search_wikihow
+#from pywikihow import WikiHow,search_wikihow
 import os
 import pyttsx3
 import webbrowser
@@ -13,8 +13,13 @@ import speedtest
 import wolframalpha
 import requests
 import pyautogui as pa
+import urllib.request
+import json
+import emoji
+from requests import request
+import requests
 
-searchbar = pa.locateCenterOnScreen('D:\\ULTRON\\EDITH\\DataBase\\PyAutoGui\\Youtube\\SearchBar.png')
+#searchbar = pa.locateCenterOnScreen('D:\\ULTRON\\EDITH\\DataBase\\PyAutoGui\\Youtube\\SearchBar.png')
 def speak(audio):
     engine = pyttsx3.init('sapi5')
     voices = engine.getProperty('voices')
@@ -162,3 +167,13 @@ def YoutubeAudio():
     y = YouTube(youtube_link)
     t = y.streams.filter(only_audio=True).all()
     t[0].download(output_path="D:\\ULTRON\\EDITH\\DataBase\\YoutubeAudio")
+
+def youtubeInfo():
+    name="UC4zWG9LccdWGUlF77LZ8toA"
+    path = open("D:\\EDITH\\E.D.I.T.H\\DataBase\\API KEYS\\Youtube.txt")
+    key = path.readlines()
+    req = requests.get(url="https://www.googleapis.com/youtube/v3/channels?part=statistics&id="+name+"&key="+key)
+    Data = req.json()
+    Sub = Data["items"][0]["statistics"]["subscriberCount"]
+    View = Data["items"][0]["statistics"]["viewCount"]
+    speak(f"Sir the channel currently has {Sub} Subscribers and Total views are {View}")

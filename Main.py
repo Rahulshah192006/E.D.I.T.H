@@ -16,6 +16,7 @@ from NASA import Nasa
 from DataBase.Class.onlineclass import teams,vednatuClass
 from lighton import lighton
 from lightoff import lightoff
+from Features import youtubeInfo
 
 
 engine = pyttsx3.init('sapi5')
@@ -178,6 +179,8 @@ def TaskExe():
         elif 'light off' in query:
             speak("Turning Light off")
             lightoff()
+        elif 'Youtube information' in query:
+            youtubeInfo()
 
 
         else:
