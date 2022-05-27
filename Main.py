@@ -13,7 +13,6 @@ from keyboard import press
 from keyboard import press_and_release
 import webbrowser
 from NASA import Nasa
-from DataBase.Class.onlineclass import teams,vednatuClass
 from lighton import lighton
 from lightoff import lightoff
 from Features import youtubeInfo

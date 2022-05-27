@@ -50,9 +50,9 @@ def Nasa(Date):
 
 def MarsImage():
     name = 'curiosity'
-    date = "2022-05-05"
-    Api_ = str(api_key)
-    url = f"https://api.nasa.gov/mars-photos/api/v1/rovers/{name}/photos?earth_date={date}&api_key={Api_}"
+    date = input("enter the Date : - ")
+    Api = str(api_key)
+    url = f"https://api.nasa.gov/mars-photos/api/v1/rovers/{name}/photos?earth_date={date}&api_key={Api}"
     r = requests.get(url)
     data = r.json()
     Photos = data['photos'][:20]
@@ -69,8 +69,8 @@ def MarsImage():
             img = f'{index}.jpg'
             with open(img,'wb') as file:
                 file.write(pro.content)
-            path_1 = "D:\\EDITH\\E.D.I.T.H\\" + str(img)
-            path_2 = "D:\\EDITH\\E.D.I.T.H\\DataBase\\Nasa\\Mars" + str(img)
+            path_1 = "D:\\EDITH\\E.D.I.T.H\\DataBase\\Nasa\\" + str(img)
+            path_2 = "D:\\EDITH\\E.D.I.T.H\\DataBase\\Nasa\\Mars\\" + str(img)
             os.rename(path_1,path_2)
             os.startfile(path_2)
         print(f"This Image Was Captured With : {full_camera_name}")
@@ -78,6 +78,7 @@ def MarsImage():
 
     except:
         speak("Something Went wrong")
+MarsImage()
 
 def ISSTracker():
     url = "http://api.open-notify.org/iss-now.json"

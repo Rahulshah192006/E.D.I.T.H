@@ -1,7 +1,7 @@
 import pyperclip
 import pywhatkit
 import wikipedia
-#from pywikihow import WikiHow,search_wikihow
+from pywikihow import WikiHow,search_wikihow
 import os
 import pyttsx3
 import webbrowser
@@ -19,7 +19,7 @@ import emoji
 from requests import request
 import requests
 
-#searchbar = pa.locateCenterOnScreen('D:\\ULTRON\\EDITH\\DataBase\\PyAutoGui\\Youtube\\SearchBar.png')
+searchbar = pa.locateCenterOnScreen('D:\\EDITH\\E.D.I.T.H\\DataBase\\PyAutoGui\\Youtube\\SearchBar.png')
 def speak(audio):
     engine = pyttsx3.init('sapi5')
     voices = engine.getProperty('voices')
@@ -69,7 +69,7 @@ def YoutubeSearch(term):
 def Alarm(query):
     TIME = open('D:\\ULTRON\\EDITH\\Data.txt','a')
     TIME.write(query)
-    os.startfile("D:\\ULTRON\\EDITH\\DataBase\\ExtraPro\\Alarm.py")
+    os.startfile("D:\\EDITH\\E.D.I.T.H\\DataBase\\ExtraPro\\Alarm.py")
 
 def DownloadYouTube():
 
@@ -83,7 +83,7 @@ def DownloadYouTube():
         url = YouTube(link)
         video = url.streams.get_highest_resolution()
 
-        video.download('D:\\ULTRON\\EDITH\\DataBase\\YoutubeVideo')
+        video.download('D:\\EDITH\\E.D.I.T.H\\DataBase\\YoutubeVideo')
 
 
     Download(Link)
@@ -92,7 +92,7 @@ def DownloadYouTube():
     speak("Done Sir , I Have Downloaded The Video .")
 
     speak("You Can Go And Check It Out.")
-    os.startfile('D:\\ULTRON\\EDITH\\DataBase\\YoutubeVideo')
+    os.startfile('D:\\EDITH\\E.D.I.T.H\\DataBase\\YoutubeVideo')
 
 def InternetSpeed():
         speak("Wait a few seconds boss, checking your internet speed")
@@ -104,7 +104,7 @@ def InternetSpeed():
         speak(f"Boss, we have {dl} megabytes per second downloading speed and {up} megabytes per second uploading speed")
 
 def Wopha(query):
-    key = open('D:\\ULTRON\\EDITH\\DataBase\\API KEYS\\wolfalpha.cp','rt')
+    key = open('D:\\EDITH\\E.D.I.T.H\\DataBase\\API KEYS\\wolfalpha.cp','rt')
     API = key.readline()
     key.close()
     Api_Key = API

@@ -21,10 +21,10 @@ def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 
-searchBar = pa.locateCenterOnScreen('D:\\ULTRON\\EDITH\\DataBase\\PyAutoGui\\Whatsapp\\BAR.png')
-Videocall = pa.locateCenterOnScreen('D:\\ULTRON\\EDITH\\DataBase\\PyAutoGui\\Whatsapp\\VideoCall.png')
-messageBar = pa.locateCenterOnScreen('D:\\ULTRON\\EDITH\\DataBase\\PyAutoGui\\Whatsapp\\messageBar.png')
-call = pa.locateCenterOnScreen('D:\\ULTRON\\EDITH\\DataBase\\PyAutoGui\\Whatsapp\\Call.png')
+searchBar = pa.locateCenterOnScreen('D:\\EDITH\\E.D.I.T.H\\DataBase\\PyAutoGui\\Whatsapp\\BAR.png')
+Videocall = pa.locateCenterOnScreen('D:\\EDITH\\E.D.I.T.H\\DataBase\\PyAutoGui\\Whatsapp\\VideoCall.png')
+messageBar = pa.locateCenterOnScreen('D:\\EDITH\\E.D.I.T.H\\DataBase\\PyAutoGui\\Whatsapp\\messageBar.png')
+call = pa.locateCenterOnScreen('D:\\EDITH\\E.D.I.T.H\\DataBase\\PyAutoGui\\Whatsapp\\Call.png')
 
 
 def Whatsapp(name,message):
